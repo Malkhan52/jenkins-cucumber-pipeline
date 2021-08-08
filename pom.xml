@@ -53,56 +53,15 @@
 			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.uniknow.agiledev/cucumber-reporting -->
-		<dependency>
-			<groupId>org.uniknow.agiledev</groupId>
-			<artifactId>cucumber-reporting</artifactId>
-			<version>0.1.14</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
 		<plugins>
-
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${maven-surefire-plugin.version}</version>
-				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-			</plugin>
-			<!-- <plugin>
-
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>5.5.4</version>
-				<executions>
-					<execution>
-						<id>execution</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<projectName>Cucumber Demo</projectName>
-							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin> -->
-		</plugins>
-	</build>
-
-	<reporting>
-		<plugins>
-			<plugin>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>5.3.0</version>
 			</plugin>
 		</plugins>
-	</reporting>
-
-</project>
+	</build>
+	</project>

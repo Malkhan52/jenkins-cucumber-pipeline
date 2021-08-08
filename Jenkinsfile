@@ -23,7 +23,14 @@ pipeline{
             }
         }       
         
+		stage ('Build Stage') {
 
+            steps {
+               
+                    bat 'mvn package'                
+
+            }
+        }
 
         stage ('Cucumber Reports') {
 
@@ -36,14 +43,7 @@ pipeline{
 
         }
         
-        stage ('Build Stage') {
-
-            steps {
-               
-                    bat 'mvn package'                
-
-            }
-        }
+        
 
     }
 

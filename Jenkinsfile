@@ -17,20 +17,13 @@ pipeline{
 
             steps {
                 
-                    bat 'mvn test'
+                    bat 'mvn verify'
                 
 
             }
-        }       
+        }      
         
-		stage ('Build Stage') {
-
-            steps {
-               
-                    bat 'mvn package'                
-
-            }
-        }
+		
 
         stage ('Cucumber Reports') {
 

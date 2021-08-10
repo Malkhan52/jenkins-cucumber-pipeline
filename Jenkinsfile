@@ -34,7 +34,7 @@ pipeline{
             }
         }   
         
-        stage('Generate HTML report') {
+        stage('Generate Cucumber report') {
             steps{
         			cucumber buildStatus: 'UNSTABLE',
                 		reportTitle: 'My Cucumber Report',

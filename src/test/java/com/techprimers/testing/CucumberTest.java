@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"json:target/cucumber.json"})
+@CucumberOptions(features = "classpath:features", plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"})
 public class CucumberTest {
 
 }

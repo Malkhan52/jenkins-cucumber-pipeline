@@ -17,24 +17,37 @@ pipeline{
 
             steps {
                 
-                    bat 'mvn verify'
+                    bat 'mvn test'
                 
 
             }
         }      
         
 		
-
-        stage ('Cucumber Reports') {
+		stage ('Build Stage') {
 
             steps {
-                cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber.json",
-                    jsonReportDirectory: 'target'
+                
+                    bat 'mvn install'
+                
 
             }
-
-        }
+        }   
+        
+        stage('Generate HTML report') {
+            steps{
+        			cucumber buildStatus: 'UNSTABLE',
+                		reportTitle: 'My Cucumber Report',
+                		fileIncludePattern: '**/*.json',
+               			trendsLimit: 10,
+                		classifications: [
+                    		[
+                        		'key': 'Browser',
+                        		'value': 'Chrome'
+                    		]
+                		]
+                  }
+			}
         
         
 
